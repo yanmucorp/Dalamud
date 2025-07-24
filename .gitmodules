@@ -24,4 +24,4 @@
 	url = https://github.com/goatcorp/gc-cimguizmo
 [submodule "lib/Lumina"]
 	path = lib/Lumina
-	url = https://github.com/ottercorp/Lumina/
+	url = https://github.com/Dalamud-DailyRoutines/Lumina/
