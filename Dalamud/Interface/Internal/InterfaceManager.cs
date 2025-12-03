@@ -276,13 +276,6 @@ internal partial class InterfaceManager : IInternalDisposableService
     /// </remarks>
     public long CumulativePresentCalls { get; private set; }
 
-    /// <inheritdoc cref="AssertHandler.ShowAsserts"/>
-    public bool ShowAsserts
-    {
-        get => this.assertHandler.ShowAsserts;
-        set => this.assertHandler.ShowAsserts = value;
-    }
-
     /// <inheritdoc cref="AssertHandler.EnableVerboseLogging"/>
     public bool EnableVerboseAssertLogging
     {

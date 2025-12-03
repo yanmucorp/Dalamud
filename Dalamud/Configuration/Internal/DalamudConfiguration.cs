@@ -252,11 +252,6 @@ internal sealed class DalamudConfiguration : IInternalDisposableService
     public bool DevBarOpenAtStartup { get; set; }
 
     /// <summary>
-    /// Gets or sets a value indicating whether ImGui asserts should be enabled at startup.
-    /// </summary>
-    public bool? ImGuiAssertsEnabledAtStartup { get; set; }
-
-    /// <summary>
     /// Gets or sets a value indicating whether docking should be globally enabled in ImGui.
     /// </summary>
     public bool IsDocking { get; set; }
