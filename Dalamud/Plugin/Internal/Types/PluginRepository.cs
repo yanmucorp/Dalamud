@@ -24,12 +24,12 @@ internal class PluginRepository
     ///     官方主仓库地址
     /// </summary>
     
-    public const string MainRepoUrlDailyRoutines = "https://gh.atmoomen.top/https://raw.githubusercontent.com/Dalamud-DailyRoutines/PluginDistD17/main/pluginmaster.json";
+    public const string MainRepoUrlDailyRoutines = "https://raw.githubusercontent.com/yanmucorp/PluginDistD17/refs/heads/main/pluginmaster.json";
     public const string MainRepoUrlGoatCorp = "https://kamori.goats.dev/Plugin/PluginMaster";
 
     public static string MainRepoUrl => Service<DalamudConfiguration>.Get().MainRepoUrl;
 
-    public const string MainRepoDRUrl = "https://raw.githubusercontent.com/AtmoOmen/DalamudPlugins/main/pluginmaster.json";
+    public const string MainRepoDRUrl = "https://raw.githubusercontent.com/yanmucorp/PluginDistD17/refs/heads/main/pluginmaster.json";
 
     private const int HttpRequestTimeoutSeconds = 20;
 
