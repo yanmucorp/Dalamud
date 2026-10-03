@@ -63,13 +63,25 @@ public class Localization : IServiceType
     /// </summary>
     /// <param name="langCode">The language code which should be in <see cref="ApplicableLangCodes"/>.</param>
     /// <returns>The corresponding instance of <see cref="CultureInfo"/>.</returns>
-    public static CultureInfo GetCultureInfoFromLangCode(string langCode) =>
-        CultureInfo.GetCultureInfo(langCode switch
+    public static CultureInfo GetCultureInfoFromLangCode(string langCode)
+    {
+        var mapped = langCode.ToLowerInvariant() switch
         {
-            "tw" => "zh-hant",
+            "tw" or "tc" => "zh-hant",
             "zh" => "zh-hans",
             _ => langCode,
-        });
+        };
+
+        try
+        {
+            return CultureInfo.GetCultureInfo(mapped);
+        }
+        catch (CultureNotFoundException)
+        {
+            // Fallback to InvariantCulture on unrecognized cultures to prevent AggregateException crashes under Wine/Proton.
+            return CultureInfo.InvariantCulture;
+        }
+    }
 
     /// <summary>
     /// Search the set-up localization data for the provided assembly for the given string key and return it.
